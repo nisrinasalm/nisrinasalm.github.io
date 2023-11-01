@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    Hasil : {{ hasil }} <br>
+    <input v-model="angkaPertama" type="number">
+    <input v-model="angkaKedua" type="number">
+    <div>
+      <button @click="hasil=angkaPertama+angkaKedua">+</button>
+      <button @click="hasil=angkaPertama-angkaKedua">-</button>
+      <button @click="hasil=angkaPertama*angkaKedua">*</button>
+      <button @click="hasil=angkaPertama/angkaKedua">/</button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                angkaPertama: 0,
+                angkaKedua: 0,
+                hasil: 0,
+            }
+        }
+    })
+    app.mount('#app')
+  </script>
+</body>
+</html>
